@@ -1,0 +1,1091 @@
+{
+  "openapi": "3.0.0",
+  "tags": [],
+  "info": {
+    "title": "Модули ТИ из i2Rest",
+    "version": "1.0.0",
+    "contact": {},
+    "description": "Модули ТИ через i2Rest"
+  },
+  "servers": [
+    {
+      "url": "http://HIDDEN1:5571",
+      "description": "Тестовая среда US7"
+    },
+    {
+      "url": "http://HIDDEN1:5551",
+      "description": "Среда разработки USB"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "errorResponse": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string"
+                },
+                "code": {
+                  "type": "string"
+                },
+                "details": {
+                  "type": "string"
+                },
+                "reason": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "UEQG100M_IN": {
+        "type": "object",
+        "properties": {
+          "IAB": {
+            "type": "string",
+            "maxLength": 4
+          },
+          "IAN": {
+            "type": "string",
+            "maxLength": 6
+          },
+          "IAS": {
+            "type": "string",
+            "maxLength": 3
+          },
+          "IEAN": {
+            "type": "string",
+            "maxLength": 20
+          },
+          "IIBAN": {
+            "type": "string",
+            "maxLength": 28
+          }
+        }
+      },
+      "UEQG100M_OUT": {
+        "type": "object",
+        "properties": {
+          "OAB": {
+            "type": "string",
+            "maxLength": 4
+          },
+          "OAN": {
+            "type": "string",
+            "maxLength": 6
+          },
+          "OAS": {
+            "type": "string",
+            "maxLength": 3
+          },
+          "OEAN": {
+            "type": "string",
+            "maxLength": 20
+          },
+          "OIBAN": {
+            "type": "string",
+            "maxLength": 28
+          }
+        }
+      },
+      "YEQG001_IN": {
+        "type": "object",
+        "properties": {
+          "HZCUS": {
+            "type": "string",
+            "maxLength": 6
+          },
+          "HZCLC": {
+            "type": "string",
+            "maxLength": 3
+          },
+          "HZCPNC": {
+            "type": "string",
+            "maxLength": 6
+          },
+          "HZCRES": {
+            "type": "string",
+            "maxLength": 1985
+          }
+        }
+      },
+      "YEQG001_OUT": {
+        "type": "object",
+        "properties": {
+          "HZCUS": {
+            "type": "string",
+            "maxLength": 6
+          },
+          "HZCLC": {
+            "type": "string",
+            "maxLength": 3
+          },
+          "HZCPNC": {
+            "type": "string",
+            "maxLength": 6
+          },
+          "HZDAZ": {
+            "type": "string",
+            "maxLength": 11
+          },
+          "HZBRNM": {
+            "type": "string",
+            "maxLength": 4
+          },
+          "HZCTP": {
+            "type": "string",
+            "maxLength": 2
+          },
+          "HZCTD": {
+            "type": "string",
+            "maxLength": 35
+          },
+          "HZCUN": {
+            "type": "string",
+            "maxLength": 35
+          },
+          "HZDAS": {
+            "type": "string",
+            "maxLength": 15
+          },
+          "HZUNN": {
+            "type": "string",
+            "maxLength": 9
+          },
+          "HZCRFG": {
+            "type": "string",
+            "maxLength": 14
+          },
+          "HZCRF": {
+            "type": "string",
+            "maxLength": 14
+          },
+          "HZUNNF": {
+            "type": "string",
+            "maxLength": 9
+          },
+          "HZCTA": {
+            "type": "string",
+            "maxLength": 3
+          },
+          "HZCTAD": {
+            "type": "string",
+            "maxLength": 46
+          },
+          "HZCNAL": {
+            "type": "string",
+            "maxLength": 2
+          },
+          "HZCNML": {
+            "type": "string",
+            "maxLength": 35
+          },
+          "HZCNAI": {
+            "type": "string",
+            "maxLength": 2
+          },
+          "HZCNMI": {
+            "type": "string",
+            "maxLength": 35
+          },
+          "HZSAC": {
+            "type": "string",
+            "maxLength": 2
+          },
+          "HZSUA": {
+            "type": "string",
+            "maxLength": 35
+          },
+          "HZCNAR": {
+            "type": "string",
+            "maxLength": 2
+          },
+          "HZDNAR": {
+            "type": "string",
+            "maxLength": 35
+          },
+          "HZCNAP": {
+            "type": "string",
+            "maxLength": 2
+          },
+          "HZDNAP": {
+            "type": "string",
+            "maxLength": 35
+          },
+          "HZNA1": {
+            "type": "string",
+            "maxLength": 35
+          },
+          "HZNA2": {
+            "type": "string",
+            "maxLength": 35
+          },
+          "HZNA3": {
+            "type": "string",
+            "maxLength": 35
+          },
+          "HZNA4": {
+            "type": "string",
+            "maxLength": 35
+          },
+          "HZNA5": {
+            "type": "string",
+            "maxLength": 35
+          },
+          "HZPZIP": {
+            "type": "string",
+            "maxLength": 10
+          },
+          "HZPHN": {
+            "type": "string",
+            "maxLength": 20
+          },
+          "HZFAX": {
+            "type": "string",
+            "maxLength": 20
+          },
+          "HZGRP": {
+            "type": "string",
+            "maxLength": 6
+          },
+          "HZGTD": {
+            "type": "string",
+            "maxLength": 35
+          },
+          "HZCNAG": {
+            "type": "string",
+            "maxLength": 2
+          },
+          "HZDNAG": {
+            "type": "string",
+            "maxLength": 35
+          },
+          "HZDOB": {
+            "type": "string",
+            "maxLength": 8
+          },
+          "HZPOB": {
+            "type": "string",
+            "maxLength": 45
+          },
+          "HZSRDC": {
+            "type": "string",
+            "maxLength": 10
+          },
+          "HZNMDC": {
+            "type": "string",
+            "maxLength": 15
+          },
+          "HZDVDZ": {
+            "type": "string",
+            "maxLength": 11
+          },
+          "HZOVDC": {
+            "type": "string",
+            "maxLength": 35
+          },
+          "HZTPDC": {
+            "type": "string",
+            "maxLength": 2
+          },
+          "HZTPDD": {
+            "type": "string",
+            "maxLength": 35
+          },
+          "HZRG": {
+            "type": "string",
+            "maxLength": 1
+          },
+          "HZID": {
+            "type": "string",
+            "maxLength": 10
+          },
+          "HZDIS": {
+            "type": "string",
+            "maxLength": 35
+          },
+          "HZZON": {
+            "type": "string",
+            "maxLength": 35
+          },
+          "HZSETT": {
+            "type": "string",
+            "maxLength": 3
+          },
+          "HZSET": {
+            "type": "string",
+            "maxLength": 35
+          },
+          "HZSTRT": {
+            "type": "string",
+            "maxLength": 5
+          },
+          "HZSTR": {
+            "type": "string",
+            "maxLength": 35
+          },
+          "HZHOM": {
+            "type": "string",
+            "maxLength": 6
+          },
+          "HZCOR": {
+            "type": "string",
+            "maxLength": 3
+          },
+          "HZFLT": {
+            "type": "string",
+            "maxLength": 7
+          },
+          "HZMT11": {
+            "type": "string",
+            "maxLength": 10
+          },
+          "HZMT12": {
+            "type": "string",
+            "maxLength": 7
+          },
+          "HZMT21": {
+            "type": "string",
+            "maxLength": 10
+          },
+          "HZMT22": {
+            "type": "string",
+            "maxLength": 7
+          },
+          "HZHT1": {
+            "type": "string",
+            "maxLength": 10
+          },
+          "HZHT2": {
+            "type": "string",
+            "maxLength": 7
+          },
+          "HZCT11": {
+            "type": "string",
+            "maxLength": 10
+          },
+          "HZCT12": {
+            "type": "string",
+            "maxLength": 7
+          },
+          "HZCT21": {
+            "type": "string",
+            "maxLength": 10
+          },
+          "HZCT22": {
+            "type": "string",
+            "maxLength": 7
+          },
+          "HZFAX1": {
+            "type": "string",
+            "maxLength": 10
+          },
+          "HZFAX2": {
+            "type": "string",
+            "maxLength": 7
+          },
+          "HZEQSN": {
+            "type": "string",
+            "maxLength": 1
+          },
+          "HZCSA": {
+            "type": "string",
+            "maxLength": 35
+          },
+          "HZC08": {
+            "type": "string",
+            "maxLength": 8
+          },
+          "HZCUSC": {
+            "type": "string",
+            "maxLength": 1
+          },
+          "HZANSF": {
+            "type": "string",
+            "maxLength": 1
+          },
+          "HZDAZB": {
+            "type": "string",
+            "maxLength": 11
+          },
+          "HZSRK": {
+            "type": "string",
+            "maxLength": 2
+          },
+          "HZSRKD": {
+            "type": "string",
+            "maxLength": 10
+          },
+          "HZQUS": {
+            "type": "string",
+            "maxLength": 1
+          },
+          "HZFIO": {
+            "type": "string",
+            "maxLength": 55
+          },
+          "HZFIB": {
+            "type": "string",
+            "maxLength": 55
+          },
+          "HZPZIB": {
+            "type": "string",
+            "maxLength": 10
+          },
+          "HZIDB": {
+            "type": "string",
+            "maxLength": 10
+          },
+          "HZDISB": {
+            "type": "string",
+            "maxLength": 35
+          },
+          "HZZONB": {
+            "type": "string",
+            "maxLength": 35
+          },
+          "HZSEBT": {
+            "type": "string",
+            "maxLength": 3
+          },
+          "HZSETB": {
+            "type": "string",
+            "maxLength": 35
+          },
+          "HZSTBT": {
+            "type": "string",
+            "maxLength": 5
+          },
+          "HZSTRB": {
+            "type": "string",
+            "maxLength": 35
+          },
+          "HZHOMB": {
+            "type": "string",
+            "maxLength": 6
+          },
+          "HZCORB": {
+            "type": "string",
+            "maxLength": 3
+          },
+          "HZFLTB": {
+            "type": "string",
+            "maxLength": 7
+          },
+          "HZCSAB": {
+            "type": "string",
+            "maxLength": 35
+          },
+          "HZSEGD": {
+            "type": "string",
+            "maxLength": 25
+          },
+          "HZCATD": {
+            "type": "string",
+            "maxLength": 23
+          },
+          "HZPAR": {
+            "type": "string",
+            "maxLength": 14
+          },
+          "HZPARD": {
+            "type": "string",
+            "maxLength": 14
+          },
+          "HZTRD": {
+            "type": "string",
+            "maxLength": 5
+          },
+          "HZTRDD": {
+            "type": "string",
+            "maxLength": 35
+          },
+          "HZPOL": {
+            "type": "string",
+            "maxLength": 1
+          },
+          "HZU03": {
+            "type": "string",
+            "maxLength": 1
+          },
+          "HZDTE": {
+            "type": "string",
+            "maxLength": 8
+          },
+          "HZACO": {
+            "type": "string",
+            "maxLength": 3
+          },
+          "HZUSR": {
+            "type": "string",
+            "maxLength": 4
+          },
+          "HZUSRD": {
+            "type": "string",
+            "maxLength": 35
+          },
+          "HZSDS": {
+            "type": "string",
+            "maxLength": 11
+          },
+          "HZSDE": {
+            "type": "string",
+            "maxLength": 11
+          },
+          "HZACOD": {
+            "type": "string",
+            "maxLength": 35
+          },
+          "HZCUSCL": {
+            "type": "string",
+            "maxLength": 1
+          },
+          "HZDTED": {
+            "type": "string",
+            "maxLength": 11
+          },
+          "HZPFLB": {
+            "type": "string",
+            "maxLength": 3
+          },
+          "HZPFLPC": {
+            "type": "string",
+            "maxLength": 2
+          },
+          "HZPFLKD": {
+            "type": "string",
+            "maxLength": 2
+          },
+          "HZPFLDT": {
+            "type": "string",
+            "maxLength": 8
+          },
+          "HZPFLNM": {
+            "type": "string",
+            "maxLength": 35
+          },
+          "HZUG2U": {
+            "type": "string",
+            "maxLength": 1
+          },
+          "HZUG2D": {
+            "type": "string",
+            "maxLength": 8
+          },
+          "HZUXSGM": {
+            "type": "string",
+            "maxLength": 3
+          },
+          "OUTRES": {
+            "type": "string",
+            "maxLength": 164
+          }
+        }
+      },
+      "YEQG061M_IN": {
+        "type": "object",
+        "properties": {
+          "HZAB": {
+            "type": "string",
+            "maxLength": 4
+          },
+          "HZAN": {
+            "type": "string",
+            "maxLength": 6
+          },
+          "IFCID": {
+            "type": "string",
+            "maxLength": 1
+          },
+          "INRES": {
+            "type": "string",
+            "maxLength": 39
+          }
+        }
+      },
+      "DSCONTROL": {
+        "type": "object",
+        "properties": {
+          "BEGIN": {
+            "type": "number"
+          },
+          "NOREQ": {
+            "type": "number"
+          },
+          "NORET": {
+            "type": "number"
+          },
+          "RECAVL": {
+            "type": "number"
+          }
+        }
+      },
+      "YEQG061M_OUT": {
+        "type": "object",
+        "properties": {
+          "HZACD": {
+            "type": "string",
+            "maxLength": 5
+          },
+          "HZANS": {
+            "type": "string",
+            "maxLength": 6
+          },
+          "HZAS": {
+            "type": "string",
+            "maxLength": 3
+          },
+          "HZSHN": {
+            "type": "string",
+            "maxLength": 15
+          },
+          "HZBAL": {
+            "type": "string",
+            "maxLength": 25
+          },
+          "HZCCY": {
+            "type": "string",
+            "maxLength": 3
+          },
+          "HZBBAL": {
+            "type": "string",
+            "maxLength": 25
+          },
+          "HZACT": {
+            "type": "string",
+            "maxLength": 2
+          },
+          "HZOAD": {
+            "type": "string",
+            "maxLength": 8
+          },
+          "HZCAD": {
+            "type": "string",
+            "maxLength": 8
+          },
+          "HZAYN": {
+            "type": "string",
+            "maxLength": 1
+          },
+          "HZBKNB": {
+            "type": "string",
+            "maxLength": 3
+          },
+          "HZP4R": {
+            "type": "string",
+            "maxLength": 3
+          },
+          "HZAI85": {
+            "type": "string",
+            "maxLength": 1
+          },
+          "HZAMAB": {
+            "type": "string",
+            "maxLength": 16
+          },
+          "HZINTC": {
+            "type": "string",
+            "maxLength": 16
+          },
+          "HZIBAN": {
+            "type": "string",
+            "maxLength": 28
+          },
+          "HZBVPK": {
+            "type": "string",
+            "maxLength": 3
+          },
+          "HZC5R": {
+            "type": "string",
+            "maxLength": 2
+          },
+          "HZAMAA": {
+            "type": "string",
+            "maxLength": 16
+          },
+          "HZLDTOP": {
+            "type": "string",
+            "maxLength": 8
+          },
+          "HZAIG3": {
+            "type": "string",
+            "maxLength": 1
+          },
+          "OUTRES": {
+            "type": "string",
+            "maxLength": 2
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "oauth2": {
+        "type": "oauth2",
+        "flows": {
+          "authorizationCode": {
+            "authorizationUrl": "http://HIDDEN1:5571/oauth2/auth",
+            "tokenUrl": "http://HIDDEN1:5571/oauth2/access",
+            "refreshUrl": "http://HIDDEN1:5571/oauth2/access",
+            "scopes": {
+              "run_program": "Execute *PGM or *SRVPGM using your credentials"
+            }
+          },
+          "clientCredentials": {
+            "tokenUrl": "http://HIDDEN1:5571/oauth2/access",
+            "refreshUrl": "http://HIDDEN1:5571/oauth2/access",
+            "scopes": {
+              "run_program": "Execute *PGM or *SRVPGM using your credentials"
+            }
+          }
+        }
+      }
+    }
+  },
+  "paths": {
+    "/run_program/EQ_API_OPEN/UEQG100M": {
+      "summary": "UEQG100M summary",
+      "description": "UEQG100M description",
+      "post": {
+        "operationId": "UEQG100M",
+        "summary": "Поиск счета в любом формате",
+        "security": [
+          {
+            "oauth2": [
+              "run_program"
+            ]
+          }
+        ],
+        "requestBody": {
+          "description": "**@INPUT** Определяет *набор* входных параметров ТИ:\n\nIAB - Префикс счета\n\nIAN - Базовая часть счета\n\nIAS - Суффикс счета\n\nили\n\nIEAN - Внешний формат счета\n\nили\n\nIIBAN - Счет в формате IBAN ",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "input"
+                ],
+                "example": {
+                  "input": {
+                    "@INPUT": {
+                      "IAB": "",
+                      "IAN": "",
+                      "IAS": "",
+                      "IEAN": "670000001F306",
+                      "IIBAN": ""
+                    }
+                  },
+                  "joblog": true
+                },
+                "properties": {
+                  "tracein": {
+                    "type": "boolean"
+                  },
+                  "traceout": {
+                    "type": "boolean"
+                  },
+                  "joblog": {
+                    "type": "boolean"
+                  },
+                  "joblog_on_error": {
+                    "type": "boolean"
+                  },
+                  "input": {
+                    "type": "object",
+                    "properties": {
+                      "TINAME": {
+                        "type": "string",
+                        "maxLength": 10
+                      },
+                      "@INPUT": {
+                        "$ref": "#/components/schemas/UEQG100M_IN"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "UEQG100M Поиск счета в любом формате",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "Auto generated from PCML",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "output": {
+                      "type": "object",
+                      "properties": {
+                        "@ERROR": {
+                          "type": "string",
+                          "maxLength": 7051
+                        },
+                        "@OUTPUT": {
+                          "$ref": "#/components/schemas/UEQG100M_OUT"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "i2Rest errorResponse",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "i2Rest errorResponse - Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/run_program/EQ_API_OPEN/YEQG001M": {
+      "summary": "i2Rest interface for YEQG061M at EQ_API_OPEN",
+      "description": "i2Rest interface for YEQG061M at EQ_API_OPEN",
+      "post": {
+        "operationId": "YEQG001M",
+        "summary": "Получение профиля клиента в УОС",
+        "security": [
+          {
+            "oauth2": [
+              "run_program"
+            ]
+          }
+        ],
+        "requestBody": {
+          "description": "Auto generated from PCML",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "input"
+                ],
+                "properties": {
+                  "tracein": {
+                    "type": "boolean"
+                  },
+                  "traceout": {
+                    "type": "boolean"
+                  },
+                  "joblog": {
+                    "type": "boolean"
+                  },
+                  "joblog_on_error": {
+                    "type": "boolean"
+                  },
+                  "input": {
+                    "type": "object",
+                    "properties": {
+                      "TINAME": {
+                        "type": "string",
+                        "maxLength": 10
+                      },
+                      "@INPUT": {
+                        "$ref": "#/components/schemas/YEQG001_IN"
+                      },
+                      "@OUTPUT": {
+                        "$ref": "#/components/schemas/YEQG001_OUT"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "Auto generated from PCML",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "Auto generated from PCML",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "output": {
+                      "type": "object",
+                      "properties": {
+                        "@ERROR": {
+                          "type": "string",
+                          "maxLength": 7051
+                        },
+                        "@OUTPUT": {
+                          "$ref": "#/components/schemas/YEQG001_OUT"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "i2Rest errorResponse",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "i2Rest errorResponse - Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/run_program/EQ_API_OPEN/YEQG061M": {
+      "summary": "i2Rest interface for YEQG061M at EQ_API_OPEN",
+      "description": "i2Rest interface for YEQG061M at EQ_API_OPEN",
+      "post": {
+        "operationId": "YEQG061M",
+        "summary": "Список счетов клиента",
+        "security": [
+          {
+            "oauth2": [
+              "run_program"
+            ]
+          }
+        ],
+        "requestBody": {
+          "description": "\n**@INPUT** Определяет набор *входных* параметров ТИ:\n| Имя      | Формат | Описание                             |\n| ---------------- | ------------| -----------------------------------|\n| HZAB              | A(4)     | Отделение   |\n| HZAN              |  A(6) | Номер счета       |\n| IFCID              |  | Зарезервировано    |\n",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "input"
+                ],
+                "properties": {
+                  "tracein": {
+                    "type": "boolean"
+                  },
+                  "traceout": {
+                    "type": "boolean"
+                  },
+                  "joblog": {
+                    "type": "boolean"
+                  },
+                  "joblog_on_error": {
+                    "type": "boolean"
+                  },
+                  "input": {
+                    "type": "object",
+                    "properties": {
+                      "TINAME": {
+                        "type": "string",
+                        "maxLength": 10
+                      },
+                      "@INPUT": {
+                        "$ref": "#/components/schemas/YEQG061M_IN"
+                      },
+                      "@CONTROL": {
+                        "$ref": "#/components/schemas/DSCONTROL"
+                      },
+                      "@ARRLEN": {
+                        "type": "number"
+                      },
+                      "@DSOUTLEN": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "Auto generated from PCML",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "Auto generated from PCML",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "output": {
+                      "type": "object",
+                      "properties": {
+                        "@ERROR": {
+                          "type": "string",
+                          "maxLength": 7051
+                        },
+                        "@OUTPUT": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/YEQG061M_OUT"
+                          }
+                        },
+                        "@CONTROL": {
+                          "$ref": "#/components/schemas/DSCONTROL"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "i2Rest errorResponse",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "i2Rest errorResponse - Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
